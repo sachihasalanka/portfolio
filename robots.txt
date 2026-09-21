@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bejewelled-fenglisu-b9932a.netlify.app/sitemap.xml
+

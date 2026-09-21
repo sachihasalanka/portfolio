@@ -1,0 +1,3762 @@
+/* =========================================================
+   SACHINI HASALANKA — PORTFOLIO
+   STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --bg: #0b0b0b;
+    --bg-soft: #111111;
+    --card: #151515;
+
+    --white: #f5f3ef;
+    --text: #b8b5ae;
+    --muted: #77736c;
+
+    --gold: #d4ad63;
+    --gold-light: #ecd092;
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    --max-width: 1200px;
+
+    --transition: 0.35s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    animation: pageFadeIn 1s ease forwards;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--gold);
+    color: #000;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(11, 11, 11, 0.88);
+
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: min(92%, var(--max-width));
+
+    height: 80px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #c4c2bd;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: var(--white);
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: min(92%, var(--max-width));
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding-top: 120px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-small-text {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(65px, 8vw, 105px);
+
+    line-height: 0.93;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-title {
+    margin-top: 30px;
+
+    color: #dedbd4;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    margin-top: 17px;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    transition: left 0.4s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--gold);
+
+    color: #111;
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.btn-outline {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 26px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    background: transparent;
+
+    text-decoration: none;
+
+    transition: all 0.35s ease;
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+
+    color: #0b0b0b;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.hero-image {
+    position: relative;
+
+    width: min(100%, 430px);
+
+    aspect-ratio: 4 / 5;
+
+    padding: 12px;
+
+    border: 1px solid rgba(212, 173, 99, 0.45);
+}
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    top: -22px;
+    right: -22px;
+
+    width: 90px;
+    height: 90px;
+
+    border-top: 1px solid var(--gold);
+
+    border-right: 1px solid var(--gold);
+}
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -22px;
+    left: -22px;
+
+    width: 90px;
+    height: 90px;
+
+    border-bottom: 1px solid var(--gold);
+
+    border-left: 1px solid var(--gold);
+}
+
+.hero-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    right: -20px;
+    bottom: 35px;
+
+    padding: 17px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: rgba(21, 21, 21, 0.96);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+
+    animation:
+        floatingCard 3s ease-in-out infinite;
+}
+
+.floating-card strong {
+    color: var(--gold);
+
+    font-size: 26px;
+}
+
+.floating-card span {
+    color: #aaa;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+    width: min(92%, var(--max-width));
+
+    margin: auto;
+
+    padding: 120px 0;
+}
+
+.section-heading {
+    margin-bottom: 60px;
+
+    opacity: 1;
+
+    transform: none;
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(43px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-description {
+    text-align: left;
+
+    max-width: 550px;
+
+    margin: 20px auto 0;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    border-top: 1px solid var(--border);
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text p {
+    margin-bottom: 22px;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    transform: translateX(6px);
+
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.about-stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+}
+
+.stat {
+    min-height: 160px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.stat h3 {
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    font-size: 37px;
+}
+
+.stat p {
+    color: #85827c;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    border-top: 1px solid var(--border);
+}
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+}
+
+.service-card {
+    position: relative;
+
+    min-height: 380px;
+
+    padding: 35px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+.service-card:hover {
+    background: var(--card);
+
+    transform: translateY(-10px);
+
+    border-color: rgba(212, 173, 99, 0.5);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.service-number {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color: #4d4d4d;
+
+    font-size: 10px;
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(212, 173, 99, 0.4);
+
+    color: var(--gold);
+
+    font-size: 23px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 19px;
+}
+
+.service-card p {
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+.service-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+.service-tags span {
+    padding: 5px 8px;
+
+    border: 1px solid var(--border);
+
+    color: #888;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+.project-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(212, 173, 99, 0.45);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   FEATURED CEYLORA PROJECT
+========================================================= */
+
+.featured-project {
+    grid-column: span 2;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 0;
+
+    overflow: hidden;
+
+    min-height: auto;
+}
+
+
+/* =========================================================
+   CEYLORA SHOWCASE
+========================================================= */
+
+.ceylora-showcase {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.ceylora-slider {
+    display: flex;
+
+    width: 100%;
+
+    height: auto;
+
+    animation: ceyloraSlide 12s infinite ease-in-out;
+}
+
+.ceylora-slide {
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    height: auto;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #111;
+}
+
+.ceylora-slider img {
+    width: 100%;
+
+    height: auto;
+
+    max-height: 500px;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   CEYLORA SLIDER
+========================================================= */
+
+@keyframes ceyloraSlide {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(0);
+    }
+
+    30% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    60% {
+        transform: translateX(-200%);
+    }
+
+    80% {
+        transform: translateX(-200%);
+    }
+
+    90% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.project-number {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   FEATURED PROJECT CONTENT
+========================================================= */
+
+.featured-project .project-content {
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+}
+
+.featured-project .project-category {
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.featured-project .project-content h3 {
+    margin-bottom: 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 44px;
+
+    line-height: 1.05;
+}
+
+.featured-project .project-content p {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PROJECT TAGS
+========================================================= */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+.project-tags span {
+    padding: 7px 12px;
+
+    border: 1px solid var(--border);
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
+.project-link {
+    width: fit-content;
+
+    margin-top: 0;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--gold-light);
+
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   NORMAL PROJECT IMAGE
+========================================================= */
+
+.project-image {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 360px;
+
+    overflow: hidden;
+}
+
+.project-image > img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s ease;
+}
+
+.project-card:hover .project-image > img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   COMING SOON IMAGES
+   LEORA + CHOOTI MAMA'S HUT
+========================================================= */
+
+.coming-soon {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.coming-soon-image {
+
+    width: 510px;
+
+    max-width: 100%;
+
+    height: 180px;
+
+    margin-bottom: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(212, 173, 99, 0.4);
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    background: #111;
+}
+
+
+/* ---------------------------------------------------------
+   THIS IS THE MAIN FIX
+   Do NOT let generic project image rule crop these images
+--------------------------------------------------------- */
+
+.project-image .coming-soon-image img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    max-width: 100% !important;
+
+    max-height: 100% !important;
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+
+    display: block;
+
+    transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   NEVER ZOOM COMING SOON IMAGES
+--------------------------------------------------------- */
+
+.project-card:hover
+.project-image
+.coming-soon-image
+img {
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   DON'T ZOOM CEYLORA
+========================================================= */
+
+.project-card:hover .ceylora-slider img {
+    transform: none !important;
+}
+
+
+/* =========================================================
+   PROJECT PLACEHOLDER
+========================================================= */
+
+.project-placeholder {
+    background:
+        radial-gradient(
+            circle at center,
+            #343434,
+            #151515 60%,
+            #090909
+        );
+}
+
+
+/* =========================================================
+   PROJECT OVERLAY
+========================================================= */
+
+.project-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0, 0, 0, 0.9)
+        );
+}
+
+.project-category {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.project-overlay h3 {
+
+    margin-top: 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 44px;
+}
+
+.project-overlay p {
+
+    color: #c7c7c7;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.project-info {
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 10px;
+
+    padding: 25px 30px;
+
+    min-width: 0;
+}
+
+.project-info > span {
+
+    color: var(--gold);
+
+    font-size: 11px;
+}
+
+.project-info h3 {
+
+    margin-bottom: 6px;
+
+    font-size: 17px;
+}
+
+.project-info p {
+
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CREATIVE WORK
+========================================================= */
+
+.creative-section {
+
+    padding: 120px 8%;
+
+    background: var(--bg);
+}
+
+.creative-section .section-heading {
+
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+}
+
+.creative-section .section-heading > span {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.creative-section .section-heading h2 em {
+
+    color: var(--gold);
+
+    font-style: normal;
+}
+
+.creative-section .section-heading p {
+
+    max-width: 550px;
+
+    margin-top: 20px;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CREATIVE GRID
+========================================================= */
+
+.creative-grid {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 300px;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CREATIVE CARD
+========================================================= */
+
+.creative-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #111;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.creative-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   LARGE CARD
+========================================================= */
+
+.creative-card.large {
+
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   CREATIVE IMAGE
+========================================================= */
+
+.creative-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.creative-card:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CREATIVE OVERLAY
+========================================================= */
+
+.creative-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0, 0, 0, 0.85)
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+.creative-card:hover .creative-overlay {
+    opacity: 1;
+}
+
+.creative-overlay span {
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+.creative-overlay h3 {
+
+    color: #fff;
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+.creative-overlay p {
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills {
+
+    border-top: 1px solid var(--border);
+}
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 100px;
+}
+
+.skills-title h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.skills-title h2 span {
+
+    color: var(--gold);
+}
+
+.skills-list {
+
+    border-top: 1px solid var(--border);
+}
+
+.skill-item {
+
+    min-height: 65px;
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    opacity: 0;
+
+    transform: translateX(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        padding-left 0.3s ease;
+}
+
+.skill-item.active {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.skill-item:hover {
+
+    padding-left: 10px;
+}
+
+.skill-item span {
+
+    color: var(--gold);
+
+    font-size: 10px;
+}
+
+.skill-item strong {
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience {
+
+    border-top: 1px solid var(--border);
+}
+
+.timeline {
+
+    border-left: 1px solid var(--border);
+}
+
+.timeline-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 200px 1fr;
+
+    gap: 50px;
+
+    padding: 0 0 55px 35px;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.timeline-item.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 7px;
+
+    left: -4px;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--gold);
+
+    border-radius: 50%;
+}
+
+.timeline-year {
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+
+    margin-bottom: 9px;
+
+    font-size: 19px;
+}
+
+.timeline-content h5 {
+
+    margin-bottom: 9px;
+
+    font-family: Times-New-Roman;
+
+    font-size: 19px;
+}
+
+.timeline-content:hover a {
+
+    color: #d4ad63;
+}
+
+.timeline-content p {
+
+    max-width: 650px;
+
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+
+    padding: 140px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #272117,
+            #0b0b0b 65%
+        );
+}
+
+.cta-content h2 {
+
+    margin-bottom: 35px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.cta-content h2 span {
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.contact-intro h2 {
+
+    margin-bottom: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.contact-intro h2 span {
+
+    color: var(--gold);
+}
+
+.contact-intro > p:last-child {
+
+    max-width: 500px;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.contact-details {
+
+    border-top: 1px solid var(--border);
+}
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 21px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.contact-item:hover {
+
+    transform: translateX(8px);
+}
+
+
+/* =========================================================
+   CONTACT ICON
+========================================================= */
+
+.contact-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    color: var(--gold);
+
+    font-size: 13px;
+}
+
+.contact-icon svg {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: block;
+
+    fill: currentColor;
+}
+
+.whatsapp-contact-icon svg {
+
+    width: 21px;
+
+    height: 21px;
+}
+
+
+/* =========================================================
+   CONTACT TEXT
+========================================================= */
+
+.contact-item small {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #6d6d6d;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.contact-item strong {
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    width: min(92%, var(--max-width));
+
+    margin: auto;
+
+    padding: 35px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: #5f5f5f;
+
+    font-size: 10px;
+}
+
+.footer-logo {
+
+    color: var(--white);
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.footer-logo span {
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   PAGE / HERO ANIMATIONS
+========================================================= */
+
+@keyframes pageFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+
+    animation:
+        heroContent 1s ease forwards;
+}
+
+.hero-visual {
+
+    opacity: 0;
+
+    animation:
+        heroImage 1.2s ease 0.15s forwards;
+}
+
+@keyframes heroContent {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes heroImage {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(60px)
+            scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   LEFT REVEAL
+========================================================= */
+
+.reveal-left {
+
+    opacity: 0;
+
+    transform:
+        translateX(-50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-left.active {
+
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   RIGHT REVEAL
+========================================================= */
+
+.reveal-right {
+
+    opacity: 0;
+
+    transform:
+        translateX(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-right.active {
+
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   SERVICE SCROLL ANIMATION
+========================================================= */
+
+.service-card.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+}
+
+.service-card.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.service-card.reveal.active:hover {
+
+    transform:
+        translateY(-10px);
+}
+
+
+/* =========================================================
+   PROJECT SCROLL ANIMATION
+========================================================= */
+
+.project-card.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+}
+
+.project-card.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.project-card.reveal.active:hover {
+
+    transform:
+        translateY(-8px);
+}
+
+
+/* =========================================================
+   CREATIVE SCROLL ANIMATION
+========================================================= */
+
+.creative-card.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px)
+        scale(0.97);
+}
+
+.creative-card.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.creative-card.reveal.active:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1);
+}
+
+
+/* =========================================================
+   SECTION GOLD LINE
+========================================================= */
+
+.section-heading > span {
+
+    position: relative;
+
+    display: inline-block;
+}
+
+.section-heading > span::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transition:
+        width 0.7s ease;
+}
+
+.section-heading.active > span::after {
+
+    width: 45px;
+}
+
+
+/* =========================================================
+   FLOATING CARD ANIMATION
+========================================================= */
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+========================================================= */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 9999;
+
+    min-width: 58px;
+
+    height: 58px;
+
+    padding: 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    background: #25d366;
+
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP ICON
+========================================================= */
+
+.whatsapp-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    flex: 0 0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.whatsapp-icon svg {
+
+    width: 27px;
+
+    height: 27px;
+
+    display: block;
+
+    fill: currentColor;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP TEXT
+========================================================= */
+
+.whatsapp-text {
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP HOVER
+========================================================= */
+
+.floating-whatsapp:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   WHATSAPP PULSE
+========================================================= */
+
+.floating-whatsapp::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(37, 211, 102, 0.45);
+
+    animation:
+        whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+
+        transform:
+            scale(0.95);
+
+        opacity: 0.8;
+    }
+
+    70% {
+
+        transform:
+            scale(1.12);
+
+        opacity: 0;
+    }
+
+    100% {
+
+        transform:
+            scale(1.12);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CONTACT CV
+========================================================= */
+
+.contact-cv {
+    margin-top: 25px;
+}
+
+.contact-cv .btn {
+    width: fit-content;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.contact-form-wrapper {
+
+    margin-top: 100px;
+
+    max-width: 850px;
+}
+
+.contact-form-heading {
+
+    margin-bottom: 35px;
+}
+
+.contact-form-heading h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+}
+
+.contact-form-heading h3 span {
+
+    color: var(--gold);
+}
+
+.contact-form {
+
+    padding: 40px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+}
+
+.form-group {
+
+    margin-bottom: 25px;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    background: #0d0d0d;
+
+    color: var(--white);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #555;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 2px rgba(212, 173, 99, 0.08);
+}
+
+.form-submit {
+
+    cursor: pointer;
+
+    border: 1px solid var(--gold);
+}
+
+.form-note {
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+
+        grid-template-columns:
+            1fr
+            0.8fr;
+
+        gap: 40px;
+    }
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .skills-grid {
+        gap: 50px;
+    }
+
+    .featured-project {
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    /* Ceylora */
+    .ceylora-showcase {
+
+        height: 330px;
+
+        min-height: 330px;
+    }
+
+    .ceylora-slider {
+
+        height: 330px;
+
+        min-height: 330px;
+    }
+
+    .ceylora-slide {
+
+        height: 330px;
+
+        min-height: 330px;
+    }
+
+    .ceylora-slider img {
+
+        width: 100%;
+
+        height: 100%;
+
+        max-height: 330px;
+
+        object-fit: contain;
+
+        object-position: center;
+    }
+
+    /* Project cards */
+    .project-image {
+
+        min-height: 330px;
+    }
+
+    /* Coming soon */
+    .coming-soon-image {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 170px;
+    }
+
+    .project-image .coming-soon-image img {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        object-fit: contain !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       GLOBAL
+    ----------------------------------------------------- */
+
+    html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    .hero,
+    .section,
+    .navbar,
+    .footer {
+
+        width: 92%;
+
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       NAVIGATION
+    ----------------------------------------------------- */
+
+    .navbar {
+
+        height: 70px;
+    }
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        background:
+            rgba(11, 11, 11, 0.98);
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .nav-links.active {
+
+        display: flex;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+
+        min-height: auto;
+
+        padding-top: 125px;
+
+        padding-bottom: 80px;
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+    .hero h1 {
+
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-title {
+
+        font-size: 14px;
+    }
+
+    .hero-description {
+
+        font-size: 13px;
+    }
+
+    .hero-visual {
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+    ----------------------------------------------------- */
+
+    .section {
+
+        padding: 80px 0;
+    }
+
+    .section-heading {
+
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+
+        font-size: 45px;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
+    .projects-grid {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .project-card {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       FEATURED CEYLORA
+    ===================================================== */
+
+    .featured-project {
+
+        grid-column: span 1;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       CEYLORA MOBILE
+    ===================================================== */
+
+    .ceylora-showcase {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 280px;
+
+        min-height: 280px;
+
+        overflow: hidden;
+
+        background: #111;
+    }
+
+    .ceylora-slider {
+
+        display: flex;
+
+        width: 100%;
+
+        height: 280px;
+
+        min-height: 280px;
+
+        animation:
+            ceyloraSlide 12s infinite ease-in-out;
+    }
+
+    .ceylora-slide {
+
+        flex: 0 0 100%;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 280px;
+
+        min-height: 280px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #111;
+    }
+
+    .ceylora-slider img {
+
+        width: 100%;
+
+        height: 100%;
+
+        max-width: 100%;
+
+        max-height: 280px;
+
+        display: block;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        transform: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CEYLORA NUMBER
+    ----------------------------------------------------- */
+
+    .project-number {
+
+        top: 15px;
+
+        left: 15px;
+
+        width: 42px;
+
+        height: 42px;
+    }
+
+
+    /* =====================================================
+       FEATURED CONTENT
+    ===================================================== */
+
+    .featured-project .project-content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        padding: 35px 25px;
+    }
+
+    .featured-project .project-content h3 {
+
+        font-size: 38px;
+
+        overflow-wrap: break-word;
+    }
+
+    .featured-project .project-content p {
+
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       NORMAL PROJECT IMAGE
+    ===================================================== */
+
+    .project-image {
+
+        position: relative;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        height: 300px;
+
+        min-height: 300px;
+
+        overflow: hidden;
+    }
+
+
+    /* Normal image only */
+    .project-image > img {
+
+        width: 100%;
+
+        height: 100%;
+
+        max-width: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    /* =====================================================
+       COMING SOON MOBILE
+       LEORA + CHOOTI MAMA'S HUT
+    ===================================================== */
+
+    .project-image .coming-soon {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+    .project-image .coming-soon-image {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 180px;
+
+        min-height: 180px;
+
+        margin-bottom: 13px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #111;
+
+        border: 1px solid rgba(212, 173, 99, 0.4);
+    }
+
+    .project-image .coming-soon-image img {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        max-width: 100% !important;
+
+        max-height: 100% !important;
+
+        object-fit: contain !important;
+
+        object-position: center !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       PROJECT OVERLAY MOBILE
+    ===================================================== */
+
+    .project-overlay {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 25px;
+
+        overflow: hidden;
+    }
+
+    .project-overlay h3 {
+
+        font-size: 38px;
+
+        line-height: 1.08;
+
+        overflow-wrap: break-word;
+    }
+
+    .project-overlay p {
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       PROJECT INFO MOBILE
+    ===================================================== */
+
+    .project-info {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        grid-template-columns: 40px 1fr;
+
+        gap: 10px;
+
+        padding: 22px 20px;
+    }
+
+    .project-info h3,
+    .project-info p {
+
+        max-width: 100%;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -----------------------------------------------------
+       CREATIVE
+    ----------------------------------------------------- */
+
+    .creative-section {
+
+        padding: 80px 5%;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    .creative-grid {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 280px;
+
+        gap: 15px;
+    }
+
+    .creative-card.large {
+
+        grid-column: span 1;
+    }
+
+    .creative-card {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+    .creative-overlay {
+
+        opacity: 1;
+
+        padding: 20px;
+    }
+
+    .creative-overlay h3 {
+
+        font-size: 21px;
+    }
+
+
+    /* -----------------------------------------------------
+       SKILLS
+    ----------------------------------------------------- */
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .skills-title h2 {
+
+        font-size: 45px;
+    }
+
+
+    /* -----------------------------------------------------
+       EXPERIENCE
+    ----------------------------------------------------- */
+
+    .timeline-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        padding-left: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .contact-intro h2 {
+
+        font-size: 45px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT FORM
+    ----------------------------------------------------- */
+
+    .contact-form-wrapper {
+
+        margin-top: 70px;
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .contact-form-heading h3 {
+
+        font-size: 35px;
+    }
+
+    .contact-form {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       WHATSAPP
+    ----------------------------------------------------- */
+
+    .floating-whatsapp {
+
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 55px;
+
+        min-width: 55px;
+
+        height: 55px;
+
+        padding: 0;
+
+        gap: 0;
+    }
+
+    .whatsapp-text {
+
+        display: none;
+    }
+
+    .whatsapp-icon {
+
+        width: 28px;
+
+        height: 28px;
+
+        flex: 0 0 28px;
+    }
+
+    .whatsapp-icon svg {
+
+        width: 26px;
+
+        height: 26px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+
+        font-size: 52px;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .hero-visual {
+
+        width: 95%;
+    }
+
+    .floating-card {
+
+        right: -5px;
+
+        padding: 13px 15px;
+    }
+
+    .floating-card strong {
+
+        font-size: 22px;
+    }
+
+    .section-heading h2 {
+
+        font-size: 40px;
+    }
+
+    .about-stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .stat {
+
+        min-height: 130px;
+
+        padding: 20px;
+    }
+
+    .stat h3 {
+
+        font-size: 30px;
+    }
+
+
+    /* =====================================================
+       PROJECTS SMALL MOBILE
+    ===================================================== */
+
+    .projects-grid {
+
+        gap: 20px;
+    }
+
+    .project-card {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       CEYLORA
+    ----------------------------------------------------- */
+
+    .ceylora-showcase {
+
+        width: 100%;
+
+        height: 260px;
+
+        min-height: 260px;
+    }
+
+    .ceylora-slider {
+
+        width: 100%;
+
+        height: 260px;
+
+        min-height: 260px;
+    }
+
+    .ceylora-slide {
+
+        width: 100%;
+
+        height: 260px;
+
+        min-height: 260px;
+
+        flex: 0 0 100%;
+    }
+
+    .ceylora-slider img {
+
+        width: 100%;
+
+        height: 100%;
+
+        max-width: 100%;
+
+        max-height: 260px;
+
+        flex: 0 0 100%;
+
+        object-fit: contain;
+
+        object-position: center;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURED CONTENT
+    ----------------------------------------------------- */
+
+    .featured-project .project-content {
+
+        padding: 30px 22px;
+    }
+
+    .featured-project .project-content h3 {
+
+        font-size: 35px;
+    }
+
+
+    /* =====================================================
+       LEORA + HUT IMAGES
+    ===================================================== */
+
+    .project-image {
+
+        min-height: 0;
+
+        height: 280px;
+
+        width: 100%;
+    }
+
+    .project-image .coming-soon {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 100%;
+    }
+
+    .project-image .coming-soon-image {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 150px;
+
+        min-height: 150px;
+
+        flex-shrink: 0;
+    }
+
+    .project-image .coming-soon-image img {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        max-width: 100% !important;
+
+        max-height: 100% !important;
+
+        object-fit: contain !important;
+
+        object-position: center !important;
+
+        transform: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       PROJECT OVERLAY
+    ----------------------------------------------------- */
+
+    .project-overlay {
+
+        padding: 20px;
+    }
+
+    .project-overlay h3 {
+
+        font-size: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       PROJECT INFO
+    ----------------------------------------------------- */
+
+    .project-info {
+
+        grid-template-columns: 35px 1fr;
+
+        gap: 8px;
+
+        padding: 20px;
+    }
+
+    .project-info h3 {
+
+        font-size: 16px;
+    }
+
+    .project-info p {
+
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       CREATIVE
+    ----------------------------------------------------- */
+
+    .creative-grid {
+
+        grid-auto-rows: 190px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT ICON
+    ----------------------------------------------------- */
+
+    .contact-icon {
+
+        width: 44px;
+
+        height: 44px;
+
+        flex: 0 0 44px;
+    }
+
+    .contact-icon svg {
+
+        width: 20px;
+
+        height: 20px;
+    }
+
+    .whatsapp-contact-icon svg {
+
+        width: 21px;
+
+        height: 21px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT FORM
+    ----------------------------------------------------- */
+
+    .contact-form-heading h3 {
+
+        font-size: 30px;
+    }
+
+    .contact-form {
+
+        padding: 20px;
+    }
+
+    .form-submit {
+
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       COMING SOON IMAGE
+    ----------------------------------------------------- */
+
+    .coming-soon-image {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 150px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+
+        font-size: 46px;
+    }
+
+    .section-heading h2 {
+
+        font-size: 36px;
+    }
+
+    .featured-project .project-content h3 {
+
+        font-size: 31px;
+    }
+
+    .project-overlay h3 {
+
+        font-size: 29px;
+    }
+
+
+    /* Ceylora */
+    .ceylora-showcase,
+    .ceylora-slider,
+    .ceylora-slide {
+
+        height: 220px;
+
+        min-height: 220px;
+    }
+
+    .ceylora-slider img {
+
+        max-height: 220px;
+    }
+
+
+    /* Coming Soon */
+    .project-image {
+
+        height: 260px;
+    }
+
+    .project-image .coming-soon-image {
+
+        height: 130px;
+
+        min-height: 130px;
+    }
+
+    .project-image .coming-soon-image img {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        object-fit: contain !important;
+    }
+
+
+    .service-card {
+
+        padding: 25px;
+    }
+
+    .contact-item {
+
+        gap: 14px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .service-card,
+    .project-card,
+    .creative-card,
+    .skill-item,
+    .timeline-item {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE IMAGE PROTECTION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Prevent any project image from escaping card */
+    .project-card,
+    .project-image,
+    .project-overlay,
+    .coming-soon,
+    .coming-soon-image {
+
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* Ceylora never crop */
+    .ceylora-slider img {
+
+        object-fit: contain !important;
+
+        transform: none !important;
+    }
+
+
+    /* Leora / Chooti Mama's Hut never crop */
+    .coming-soon-image img {
+
+        object-fit: contain !important;
+
+        object-position: center !important;
+
+        transform: none !important;
+    }
+
+
+    /* Do not allow image intrinsic size to break layout */
+    .project-image img {
+
+        max-width: 100%;
+    }
+}
